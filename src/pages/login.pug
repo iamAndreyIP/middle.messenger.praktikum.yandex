@@ -1,0 +1,16 @@
+extends ../layouts/main-layout.pug
+
+block title
+    title Авторизация
+block style 
+    link(rel="stylesheet", href="../../main.scss")
+block content
+    form.login-form
+        .login-form__fields
+            h3(class="login-form__title") Авторизация
+            input(type="text", class="text-input login-form__username-input", placeholder="Логин", name="login") 
+            input(type="text", class="text-input login-form__userpassword-input",placeholder="Пароль", name="password")
+        .login-form__buttons
+            button.login-form__submit.btn
+                span.button__capture.button__capture_blue Вход
+            a.login-from__link.link(href="registration.pug") Создать аккаунт

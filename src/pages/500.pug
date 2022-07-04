@@ -1,0 +1,11 @@
+extends ../layouts/main-layout.pug
+
+block title
+    title 500
+block style 
+    link(rel="stylesheet", href="../../main.scss")
+block content
+    .error 
+        h1.error__title 500
+        p.error__message Мы уже фиксим
+        a.error__link.link(href="chats.pug")  Назада к чатам
