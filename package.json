@@ -2,25 +2,36 @@
   "name": "messanger",
   "version": "1.0.0",
   "description": "",
-  "source": "index.pug",
+  "source": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.pug",
+    "dev": "parcel index.html",
     "build": "parcel build",
     "start": "parcel build && node server.js"
   },
   "engines": {
-    "node": ">=16.15.1"
+    "node": ">=14.0"
+  },
+  "targets": {
+    "default": {
+      "engines": {
+        "browsers": ">=50%"
+      }
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@parcel/transformer-pug": "^2.6.2",
-    "@parcel/transformer-sass": "^2.6.2",
-    "parcel": "^2.6.2"
-  },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "handlebars": "^4.7.7",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "eslint": "^8.20.0",
+    "parcel": "^2.6.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
   }
 }

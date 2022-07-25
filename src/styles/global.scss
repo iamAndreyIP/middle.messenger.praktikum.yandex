@@ -48,6 +48,10 @@ button {
   font-family: "Inter", sans-serif;
 }
 
+.btn:active {
+  transform: translateY(3px);
+}
+
 .link {
   font-size: 11px;
   text-decoration: none;

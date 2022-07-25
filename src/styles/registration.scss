@@ -15,9 +15,9 @@
     align-items: center;
     gap: 16px;
 
-    & input:last-child {
-      margin-bottom: 30px;
-    }
+    // & input:last-child {
+    //   margin-bottom: 30px;
+    // }
   }
 
   &__title {
@@ -33,5 +33,14 @@
     flex-direction: column;
     align-items: center;
     gap: 14px;
+    margin-top: 30px;
+  }
+
+  & div {
+    width: 100%;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    color: red;
   }
 }
