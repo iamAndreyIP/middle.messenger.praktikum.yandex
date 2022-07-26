@@ -72,7 +72,7 @@ function onBlur() {
       pass1 = this.value;
     }
     if (this.name === "password2") {
-      const [isValid, message] = [this.value === pass1, "no equal"];
+      const [isValid, message] = [this.value === pass1, "Пароли не совпадают"];
       if (!isValid) {
         this.nextElementSibling.textContent = message;
         this.focus();
