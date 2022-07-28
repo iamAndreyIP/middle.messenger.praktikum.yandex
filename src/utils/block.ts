@@ -41,14 +41,14 @@ class Block {
     eventBus.emit(Block.EVENTS.INIT);
   }
 
-  _registerEvents(eventBus: EventBus) {
+  private _registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
-  _getChildren(propsAndChildren: any) {
+  private _getChildren(propsAndChildren: any) {
     const children: any = {};
     const props: any = {};
 
@@ -67,7 +67,7 @@ class Block {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  _componentDidMount() {
+  private _componentDidMount() {
     this.componentDidMount();
 
     Object.values(this.children).forEach((child) => {
@@ -81,7 +81,7 @@ class Block {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
   }
 
-  _componentDidUpdate(oldProps: any, newProps: any) {
+  private _componentDidUpdate(oldProps: any, newProps: any) {
     if (this.componentDidUpdate(oldProps, newProps)) {
       this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
@@ -103,7 +103,7 @@ class Block {
     return this._element;
   }
 
-  _render() {
+  private _render() {
     const block = this.render();
 
     const newElement = block.firstElementChild as HTMLElement;
@@ -126,7 +126,7 @@ class Block {
     return this.element;
   }
 
-  _makePropsProxy(props: any) {
+  private _makePropsProxy(props: any) {
     const self = this;
     return new Proxy(props as unknown as object, {
       get(target: Record<string, unknown>, prop: string) {
@@ -150,7 +150,7 @@ class Block {
     });
   }
 
-  _removeEvents() {
+  private _removeEvents() {
     const { events = {} } = this.props;
     if (!events) {
       return;
@@ -161,7 +161,7 @@ class Block {
     });
   }
 
-  _addEvents() {
+  private _addEvents() {
     const { events = {} } = this.props;
     if (!events) {
       return;
@@ -172,7 +172,7 @@ class Block {
     });
   }
 
-  _createDocumentElement(tagName: string): HTMLElement {
+  private _createDocumentElement(tagName: string): HTMLElement {
     const element = document.createElement(tagName);
     element.setAttribute("data-id", this._id!);
     return element;

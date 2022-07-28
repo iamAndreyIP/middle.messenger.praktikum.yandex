@@ -1,12 +1,11 @@
 import Block from "./utils/block";
-import { notFound } from "./pages/404";
-import { fixIt } from "./pages/500";
-import { login } from "./pages/login";
-import { registration } from "./pages/registration";
-import { profile } from "./pages/profile";
-import { leftPanel } from "./components/leftPanel/leftPanel";
-import { mainMenu } from "./pages/menu";
-import { chats } from "./pages/chats";
+import { leftPanel } from "./components/LeftPanel/leftPanel";
+import { mainMenu } from "./pages/Menu/menu";
+import { login } from "./pages/Login/login";
+import { registration } from "./pages/Registration/registration";
+import { notFound, fixIt } from "./pages/Errors/errors";
+import { profile } from "./pages/Profile/profile";
+import { chats } from "./pages/Chats/chats";
 
 const template = `
 <div class="container">
@@ -14,31 +13,31 @@ const template = `
     {{{mainMenu}}}
     {{{login}}}
     {{{registration}}}
-    {{{profile}}}
     {{{notFound}}}
     {{{fixIt}}}
+    {{{profile}}}
     {{{chats}}}
 </div>
 `;
 
 class App extends Block {
-  constructor(props: any) {
+  constructor(props: {}) {
     super(props);
   }
 
-  render() {
+  protected render(): DocumentFragment {
     return this.compile(template, this.props);
   }
 }
 
 export const app = new App({
-  login: login,
-  registration: registration,
-  profile: profile,
-  notFound: notFound,
-  fixIt: fixIt,
   leftPanel: leftPanel,
   mainMenu: mainMenu,
+  login: login,
+  registration: registration,
+  notFound: notFound,
+  fixIt: fixIt,
+  profile: profile,
   chats: chats,
 });
 

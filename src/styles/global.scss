@@ -15,7 +15,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Inter", sans-serif;
+  font-family: $main-font-family;
 }
 
 .text-input {
@@ -23,29 +23,29 @@ button {
   padding: 7px 0;
   outline: none;
   border: none;
-  border-bottom: 2px solid #3369f3;
-  color: #1e1e1e;
+  border-bottom: 2px solid $main-color;
+  color: $text-dark-color;
   font-size: 13px;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: $main-font-family;
 }
 
 .text-input::placeholder {
-  font-family: "Inter", sans-serif;
-  color: #999999;
+  font-family: $main-font-family;
+  color: $text-light-grey-color;
   font-size: 13px;
 }
 
 .btn {
   width: 100%;
-  background-color: #3369f3;
-  color: #fff;
+  background-color: $main-color;
+  color: $white-color;
   border-radius: 12px;
   border: none;
   padding: 12px;
   font-size: 13px;
   outline: none;
-  font-family: "Inter", sans-serif;
+  font-family: $main-font-family;
 }
 
 .btn:active {
@@ -55,9 +55,17 @@ button {
 .link {
   font-size: 11px;
   text-decoration: none;
-  color: #3369f3;
+  color: $main-color;
 }
 
 .menu-item__link {
   font-size: 20px;
+}
+
+.input-field-box {
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  color: $error-message-color;
 }

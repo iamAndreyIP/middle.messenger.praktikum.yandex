@@ -6,15 +6,15 @@
   gap: 20px;
 
   &__title {
-    font-family: "Inter", sans-serif;
+    font-family: $main-font-family;
     font-size: 40px;
-    color: #1e1e1e;
+    color: $text-dark-color;
     text-align: center;
   }
 
   &__message {
     font-size: 20px;
-    font-family: "Inter", sans-serif;
+    font-family: $main-font-family;
     text-align: center;
   }
 }

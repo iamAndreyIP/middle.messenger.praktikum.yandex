@@ -4,15 +4,20 @@ const template = `
 <input type="{{inputType}}" placeholder="{{inputPlaceholder}}" name="{{inputName}}" class="{{inputClass}}"/>
 `;
 
+type InputType = {
+  inputType: string;
+  inputPlaceholder: string;
+  inputName: string;
+  inputClass: string;
+  events?: { [key: string]: (e: Event) => void };
+};
+
 export default class Input extends Block {
-  constructor(props) {
+  constructor(props: InputType) {
     super(props);
   }
 
   render() {
-    if (!this.props.inputType) {
-      this.props.inputType = "text";
-    }
     return this.compile(template, this.props);
   }
 }

@@ -1,6 +1,4 @@
-import Block from "../utils/block";
-
-const template = `
+export const template = `
 <main class="chats">
       <div class="chats__menu">
         <div class="chats__menu-head">
@@ -120,19 +118,3 @@ const template = `
       </div>
     </main>
 `;
-
-class Chats extends Block {
-  constructor(props?: {} | undefined) {
-    super(props);
-  }
-
-  render() {
-    return this.compile(template, this.props);
-  }
-
-  show(): void {
-    this.getContent()!.style.display = "flex";
-  }
-}
-
-export const chats = new Chats();

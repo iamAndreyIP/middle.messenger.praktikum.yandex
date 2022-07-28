@@ -1,37 +1,14 @@
-import Block from "../utils/block";
-import Link from "../components/Link/link";
+import { getLocation } from "../../app";
+import Link from "../../components/Link/link";
+import Block from "../../utils/block";
+import { template } from "./menuTemplate";
 
-import { getLocation } from "../app";
-
-const template = `
-<ul class="menu">
-    <li class="menu-item">
-        {{{loginLink}}}
-    </li>
-    <li class="menu-item">
-        {{{regLink}}}
-    </li>
-    <li class="menu-item">
-        {{{profileLink}}}
-    </li>
-    <li class="menu-item">
-        {{{fixLink}}}
-    </li>
-    <li class="menu-item">
-        {{{notFoundLink}}}
-    </li>
-    <li class="menu-item">
-        {{{chatsLink}}}
-    </li>
-</ul>
-`;
-
-class Menu extends Block {
-  constructor(props?: {} | undefined) {
+export default class Menu extends Block {
+  constructor(props: {} | undefined) {
     super(props);
   }
 
-  render() {
+  protected render(): DocumentFragment {
     return this.compile(template, this.props);
   }
 }

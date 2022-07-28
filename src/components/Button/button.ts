@@ -6,18 +6,18 @@ const template = `
 </button>
 `;
 
-type ButtonType = {
-  buttonText: string;
+type buttonType = {
   buttonClass: string;
+  buttonText: string;
   events?: { [key: string]: (e: Event) => void };
 };
 
 export default class Button extends Block {
-  constructor(props: ButtonType) {
+  constructor(props: buttonType) {
     super(props);
   }
 
-  render() {
+  protected render(): DocumentFragment {
     return this.compile(template, this.props);
   }
 }
