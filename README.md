@@ -3,7 +3,7 @@
 ---
 
 ### Sprint_2
-* https://github.com/iamAndreyIP/middle.messenger.praktikum.yandex/pull/2
+* https://github.com/iamAndreyIP/middle.messenger.praktikum.yandex/pull/3
 
 Можно посмотреть по этой ссылке:
 
