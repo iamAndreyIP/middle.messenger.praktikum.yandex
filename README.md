@@ -2,9 +2,14 @@
 
 ---
 
+### Sprint_2
+* https://github.com/iamAndreyIP/middle.messenger.praktikum.yandex/pull/3
+
 Можно посмотреть по этой ссылке:
 
-  https://sweet-valkyrie-9e8c0c.netlify.app/
+
+  [https://luminous-mousse-98cca6.netlify.app/](https://sweet-valkyrie-9e8c0c.netlify.app/)
+
   
 ---
 
