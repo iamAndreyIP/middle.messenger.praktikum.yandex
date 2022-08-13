@@ -1,0 +1,11 @@
+.leftArrowIcon {
+  width: 30px;
+}
+
+.leftArrowIcon:hover {
+  color: $main-color;
+}
+
+.leftArrowIcon:active {
+  transform: translateX(-3px);
+}
