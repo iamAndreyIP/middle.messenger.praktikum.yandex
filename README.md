@@ -10,9 +10,9 @@
 
 Можно посмотреть по этой ссылке:
 
-// поменять
 
-[https://luminous-mousse-98cca6.netlify.app/](https://sweet-valkyrie-9e8c0c.netlify.app/)
+
+https://nimble-bavarois-12035b.netlify.app/
 
 ---
 
