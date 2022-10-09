@@ -1,0 +1,126 @@
+:root {
+  --main-font-family: 'Inter', 'sans-serif';
+  --main-color: #3369f3;
+  --border-color: #eaeaea;
+  --bg-color-light: #fbfbfb;
+  --text-dark-color: #1e1e1e;
+  --text-light-grey-color: #999999;
+  --white-color: #ffffff;
+  --box-shadow-color: rgba(0, 0, 0, 0.14);
+  --input-bd-color: #efefef;
+  --t-color: #d3d3d3;
+  --error-message-color: #ff0000;
+}
+.modal,
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0;
+
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.modal__content,
+.modal__content-list {
+  background-color: #fff;
+  width: 310px;
+  border-radius: 12px;
+  padding: 30px;
+  z-index: 1002;
+  margin-top: 250px;
+  height: max-content;
+}
+
+.modal__content-title {
+  color: #1e1e1e;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  margin-bottom: 17px;
+}
+
+.modal__content-input input {
+  width: 100%;
+  font-size: 13px;
+  line-height: 13px;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #3369fe;
+  padding: 7px;
+  font-family: 'Inter', sans-serif;
+}
+
+.modal__content-btn {
+  margin-top: 50px;
+}
+
+.modal__content-btn .btn {
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  border-radius: 12px;
+  border: none;
+  padding: 12px;
+  font-size: 13px;
+  outline: none;
+  font-family: var(--main-font-family);
+}
+
+.modal__content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modal__conten-list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tooltip {
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  background-color: #fff;
+  width: 210px;
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  padding: 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  color: #1e1e1e;
+  z-index: 99;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tooltip__add,
+.tooltip__delete {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hidde {
+  display: none;
+}
+
+.www {
+  background-color: lightblue;
+}
+
+input.input-file {
+  border-bottom: 0;
+}

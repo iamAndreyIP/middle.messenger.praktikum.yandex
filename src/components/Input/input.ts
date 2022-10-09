@@ -1,7 +1,7 @@
-import Block from "../../utils/block";
+import Block from '../../utils/block';
 
 const template = `
-<input type="{{inputType}}" placeholder="{{inputPlaceholder}}" name="{{inputName}}" class="{{inputClass}}"/>
+<input type="{{inputType}}" placeholder="{{inputPlaceholder}}" name="{{inputName}}" class="{{inputClass}}" value="{{inputValue}}" id="{{inputId}}"/>
 `;
 
 type InputType = {
@@ -9,7 +9,9 @@ type InputType = {
   inputPlaceholder: string;
   inputName: string;
   inputClass: string;
+  inputValue?: string;
   events?: { [key: string]: (e: Event) => void };
+  inputId?: string;
 };
 
 export default class Input extends Block {
@@ -17,7 +19,7 @@ export default class Input extends Block {
     super(props);
   }
 
-  render() {
+  protected render() {
     return this.compile(template, this.props);
   }
 }

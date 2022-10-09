@@ -22,6 +22,10 @@
     gap: 10px;
   }
 
+  &__nav-icon {
+    transform: rotate(180deg);
+  }
+
   &__nav-icon svg {
     width: 28px;
     height: 28px;
@@ -35,9 +39,14 @@
     margin-bottom: 10px;
     background-color: $t-color;
     overflow: hidden;
+    position: relative;
+
+    &:hover .overlayAvatar {
+      display: flex;
+    }
 
     &-img {
-      background-color: cover;
+      background-image: cover;
     }
   }
 
@@ -62,6 +71,7 @@
       font-weight: 500;
 
       & .list-item--light {
+        position: relative;
         color: $text-light-grey-color;
       }
 
@@ -84,4 +94,47 @@
       font-family: $main-font-family;
     }
   }
+}
+
+.overlayAvatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 130px;
+  height: 130px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  display: none;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.input-change {
+  border: 0;
+  color: $text-dark-color !important;
+
+  &:focus {
+    outline-color: skyblue;
+  }
+}
+
+.avatar-link {
+  color: #fff;
+  font-size: 15px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.change-data-window {
+  width: auto;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 30px;
+  height: max-content;
+  margin-top: 250px;
 }
