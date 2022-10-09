@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .use('/', LoginPageNew)
     .use('/sign-up', RegistrationPageNew)
     .use('/messanger', ChatPage)
-    .use('/profile', ProfilePage)
+    .use('/settings', ProfilePage)
     .use('/500', ServerErrorPage)
     .use('*', NotfoundPage);
 
