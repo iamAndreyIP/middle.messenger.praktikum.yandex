@@ -2,6 +2,7 @@ import API, { AuthApi, SigninData, SignupData } from '../api/authApi';
 import { router } from '../../index';
 import store from '../utils/store';
 import MessageController from '../controllers/messageController';
+import ChatController from './chatController';
 
 export class AuthController {
   private readonly api: AuthApi;
@@ -22,6 +23,8 @@ export class AuthController {
         localStorage.setItem('login', data.login);
 
         await this.fetchUser();
+
+        await ChatController.fetchChats();
 
         router.go('/messanger');
 
@@ -73,6 +76,8 @@ export class AuthController {
       localStorage.removeItem('login');
 
       MessageController.allClose();
+
+      store.clearStore();
 
       router.go('/');
     } catch (error) {

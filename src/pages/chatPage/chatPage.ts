@@ -50,7 +50,7 @@ export default class ChatPageBase extends Block {
         click: (event) => {
           event.preventDefault();
 
-          router.go('/profile');
+          router.go('/settings');
         },
       },
     });
