@@ -2,14 +2,14 @@ import Block from '../../utils/block';
 
 import { template } from './errorTemplate';
 
-type errorTypes = {
+type ErrorTypes = {
   errorTitle: string;
   errorMessage: string;
   errorLink: {};
 };
 
 export default class MyError extends Block {
-  constructor(props: errorTypes) {
+  constructor(props: ErrorTypes) {
     super(props);
   }
 

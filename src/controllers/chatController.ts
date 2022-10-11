@@ -44,7 +44,7 @@ export class ChatController {
     }
   }
 
-  async addUserToChat(chatData: { users: any; chatId: any }) {
+  async addUserToChat(chatData: { users: number[]; chatId: number }) {
     try {
       const res: any = await this.api.addUser(chatData);
 
@@ -80,7 +80,7 @@ export class ChatController {
     }
   }
 
-  async deleteChat(chat: { chatId: string }) {
+  async deleteChat(chat: { chatId: number }) {
     try {
       const res: any = await this.api.delete(chat);
 

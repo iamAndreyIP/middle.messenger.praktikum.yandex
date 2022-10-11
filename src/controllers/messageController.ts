@@ -3,6 +3,23 @@ import store from '../utils/store';
 import { User } from '../api/authApi';
 import { WSTransportEvents } from '../utils/WSTransport';
 
+export interface Message {
+  chat_id: number;
+  time: string;
+  type: string;
+  user_id: number;
+  content: string;
+  file?: {
+    id: number;
+    user_id: number;
+    path: string;
+    filename: string;
+    content_type: string;
+    content_size: number;
+    upload_date: string;
+  };
+}
+
 class MessageController {
   private sockets: Map<number, WSTransport> = new Map();
 
@@ -70,7 +87,7 @@ class MessageController {
     });
   }
 
-  onMessage(id: number, messages: any) {
+  onMessage(id: number, messages: Message | Message[]) {
     let allMessages: any[] = [];
 
     if (Array.isArray(messages)) {
@@ -88,7 +105,7 @@ class MessageController {
 
   subscribe(transport: WSTransport, id: number) {
     transport.on(WSTransportEvents.Message, (message) => {
-      this.onMessage(id, message);
+      this.onMessage(id, message as Message);
     });
     transport.on(WSTransportEvents.Close, () => this.onClose(id));
   }

@@ -18,8 +18,13 @@ const template = `
 </div>
 `;
 
+type ChatMenuActionsBaseType = {
+  addIcon: Icon;
+  deleteIcon: Icon;
+};
+
 export default class ChatMenuActionsBase extends Block {
-  constructor(props: {} | undefined) {
+  constructor(props: ChatMenuActionsBaseType) {
     super({ ...props });
   }
 

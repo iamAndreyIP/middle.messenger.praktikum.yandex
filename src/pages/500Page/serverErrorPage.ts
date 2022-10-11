@@ -10,7 +10,7 @@ const template = `
 `;
 
 export default class ServerErrorPage extends Block {
-  constructor(props) {
+  constructor(props: {} | undefined) {
     super(props);
   }
 

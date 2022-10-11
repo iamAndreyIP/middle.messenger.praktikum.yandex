@@ -6,7 +6,7 @@ const template = `
 </button>
 `;
 
-type buttonType = {
+export type ButtonType = {
   buttonClass: string;
   buttonText: string;
   events?: { [key: string]: (e: Event) => void };
@@ -14,7 +14,7 @@ type buttonType = {
 };
 
 export default class Button extends Block {
-  constructor(props: buttonType) {
+  constructor(props: ButtonType) {
     super(props);
   }
 

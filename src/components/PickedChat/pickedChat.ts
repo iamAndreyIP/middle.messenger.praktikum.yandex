@@ -1,6 +1,6 @@
 import Block from '../../utils/block';
 import PickedChatActions from './pickedChatActions';
-import { PickedChatContent2 } from './pickedChatContent';
+import PickedChatContent, { PickedChatContent2 } from './pickedChatContent';
 import { PickedChatHead } from './pickedChatHead';
 import store, { StoreEvents } from '../../utils/store';
 
@@ -14,8 +14,14 @@ const template = `
 </div>
 `;
 
+type PickedChatType = {
+  pickedHead: PickedChat;
+  pickedContent: PickedChatContent;
+  pickedActions: PickedChatActions;
+};
+
 export default class PickedChat extends Block {
-  constructor(props: {} | undefined) {
+  constructor(props: PickedChatType | undefined | {}) {
     super({ ...props, pickedChatItem: store.getState().pickedChatItem });
 
     store.on(StoreEvents.UPDATED, () => {

@@ -1,5 +1,6 @@
 import Block from '../../utils/block';
 import { connect } from '../../utils/store';
+import { Message } from '../../controllers/messageController';
 
 const template = `
 <div class="picked-chat__content">
@@ -41,13 +42,15 @@ const template = `
 </div>
 `;
 
-export default class PickedChatContent extends Block {
-  constructor(props: {} | undefined) {
-    super(props);
-  }
+type PickedChatContentType = {
+  pickedChatId: number | undefined;
+  messages: Message[];
+  userId: number;
+};
 
-  componentDidMount(oldProps?: any): void {
-    console.log('MOUNT', this);
+export default class PickedChatContent extends Block {
+  constructor(props: PickedChatContentType) {
+    super(props);
   }
 
   protected render(): DocumentFragment {

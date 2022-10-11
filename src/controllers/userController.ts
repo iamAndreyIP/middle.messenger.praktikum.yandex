@@ -1,17 +1,18 @@
-import Api from '../api/userApi';
+import Api, { UserApi } from '../api/userApi';
 import store from '../utils/store';
 import AuthController from './authcontroller';
+import { ProfileData } from '../api/userApi';
 
 class UserController {
-  readonly api: any;
+  readonly api: UserApi;
 
   constructor() {
     this.api = Api;
   }
 
-  async changeProfile(profileData) {
+  async changeProfile(profileData: ProfileData) {
     try {
-      const nData = await this.api.changeProfile(profileData);
+      const nData: any = await this.api.changeProfile(profileData);
 
       if (!nData.response.includes('reason')) {
         store.set('currentUser', JSON.parse(nData.response));
@@ -21,9 +22,12 @@ class UserController {
     }
   }
 
-  async changePassword(passwordData) {
+  async changePassword(passwordData: {
+    oldPassword: string;
+    newPassword: string;
+  }) {
     try {
-      const nData = await this.api.changePassword(passwordData);
+      const nData: any = await this.api.changePassword(passwordData);
 
       if (!nData.response.includes('reason')) {
         if (nData.response !== 'OK')
@@ -37,9 +41,9 @@ class UserController {
     }
   }
 
-  async changeUserAvatar(form: any) {
+  async changeUserAvatar(form: FormData) {
     try {
-      const nData = await this.api.changeUserAvatar(form);
+      const nData: any = await this.api.changeUserAvatar(form);
 
       if (!nData.response.includes('reason')) {
         store.set('currentUser', JSON.parse(nData.response));

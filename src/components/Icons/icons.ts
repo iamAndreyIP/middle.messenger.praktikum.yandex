@@ -3,9 +3,14 @@ import { Add } from './iconsTemplates';
 
 const template = Add;
 
+type IconType = {
+  cls?: string;
+  events?: { [key: string]: (e: Event) => void };
+};
+
 export default class Icon extends Block {
   temp: string;
-  constructor(props: {} | undefined, temp?: string) {
+  constructor(props: IconType | {}, temp?: string) {
     super({ ...props, template: temp });
   }
 

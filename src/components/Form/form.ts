@@ -1,4 +1,5 @@
 import Block from '../../utils/block';
+import Input from '../Input/input';
 
 const template = `
 <form class="{{formClass}}">
@@ -24,16 +25,16 @@ const template = `
 </form>
 `;
 
-type formType = {
+type FormType = {
   formTitle: string;
-  formFields: any[];
+  formFields: Input[];
   formActions: any[];
   events?: {};
   formClass?: string;
 };
 
 export default class Form extends Block {
-  constructor(props: formType) {
+  constructor(props: FormType) {
     super(props);
   }
 

@@ -187,7 +187,7 @@ export default class ProfilePage extends Block {
         },
       }),
       events: {
-        click: function (e) {
+        click: function (e: { target: Element | null }) {
           const modal = document.querySelector('.modal');
 
           if (e.target === modal) {
