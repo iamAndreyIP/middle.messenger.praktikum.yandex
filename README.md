@@ -4,15 +4,9 @@
 
 ### Sprint_3
 
-// поменять
-
-- https://github.com/iamAndreyIP/middle.messenger.praktikum.yandex/pull/3
-
 Можно посмотреть по этой ссылке:
 
-// поменять
-
-https://extraordinary-granita-eb4104.netlify.app
+https://nimble-bavarois-12035b.netlify.app/
 
 ---
 
@@ -56,6 +50,30 @@ https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1
 - Изменение аватара, нажатием на ссылку при наведение на аватар
 - Выход из аккаунта (LOGOUT)
 - Кнопка назад , на предидущую страницу
+
+# Моковые данные
+
+### Уже зарегестрированные пользователи (можно потестить)
+
+№ 1:
+
+- id:97772
+- login: "mr.guest11"
+- first_name: "Guest11"
+- second_name: "Eleventh"
+- password: "helloguest11Times"
+- email: "email.for.guest11@my.exp"
+- phone: "+7098765432111"
+
+№ 2:
+
+- id:97812
+- login: "mr.guest8"
+- first_name: "Guest8"
+- second_name: "Eighth"
+- password: "helloguest8Times"
+- email: "email.for.guest8@my.exp"
+- phone: "+7098765432108"
 
 ## Комманды:
 
