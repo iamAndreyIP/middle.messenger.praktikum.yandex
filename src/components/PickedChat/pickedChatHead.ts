@@ -1,6 +1,9 @@
+import { User } from '../../api/authApi';
 import Block from '../../utils/block';
 import store from '../../utils/store';
-import { ChatMenuActions } from '../ChatActionsMenu/chatActionsMenu';
+import ChatMenuActionsBase, {
+  ChatMenuActions,
+} from '../ChatActionsMenu/chatActionsMenu';
 import Icon from '../Icons/icons';
 import { ThreeDots } from '../Icons/iconsTemplates';
 import { withStore } from '../ListItem/listItem';
@@ -26,14 +29,22 @@ const template = `
 </div>
 `;
 
+type PickedChatHeadBaseType = {
+  chatMenuActions: ChatMenuActionsBase;
+  pickedChatItem: User;
+  threeDotsIcon: Icon;
+  testIcon: Icon;
+  chatMenuActionsFlag?: boolean;
+};
+
 export default class PickedChatHeadBase extends Block {
-  constructor(props: {} | undefined) {
+  constructor(props: PickedChatHeadBaseType) {
     super(props);
 
     this.props.chatMenuActionsFlag = true;
 
     this.props.events = {
-      click: function (e) {
+      click: function (e: { target: Element | null }) {
         const title = document.querySelector('.picked-chat__title');
 
         const flag = store.getState().openUsersListFlag;

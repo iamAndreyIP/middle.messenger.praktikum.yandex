@@ -1,9 +1,20 @@
 import Block from '../../utils/block';
 import { template } from './listItemTemplate';
 import { connect } from '../../utils/store';
+import { ChatInfo } from '../../api/chatApi';
+
+type ListItem = {
+  id: number;
+  title: string;
+  unread_count: number;
+  pickedChatItem: ChatInfo;
+  events?: {
+    click: () => void;
+  };
+};
 
 export class ListItemBase extends Block {
-  constructor(props: {} | undefined) {
+  constructor(props: {} | ListItem) {
     super(props);
   }
 

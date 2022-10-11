@@ -1,4 +1,5 @@
 import Block from '../../utils/block';
+import Icon from '../Icons/icons';
 
 const template = `
 <div class="profile__left">
@@ -8,8 +9,12 @@ const template = `
 </div>
 `;
 
+type SidePanelType = {
+  leftArrowIcon: Icon;
+};
+
 export default class SidePanel extends Block {
-  constructor(props: {} | undefined) {
+  constructor(props: SidePanelType) {
     super(props);
   }
 

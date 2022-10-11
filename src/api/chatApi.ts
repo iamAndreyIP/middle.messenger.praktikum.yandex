@@ -1,4 +1,17 @@
 import BaseApi from './baseApi';
+import { User } from './authApi';
+
+export interface ChatInfo {
+  id: number;
+  title: string;
+  avatar: string;
+  unread_count: number;
+  last_message: {
+    user: User;
+    time: string;
+    content: string;
+  };
+}
 
 export class ChatApi extends BaseApi {
   private endpoint: string;
@@ -7,7 +20,7 @@ export class ChatApi extends BaseApi {
     this.endpoint = BaseApi.API_URL + path;
   }
 
-  create(title: { title: string }) {
+  create(title: { title: string }): Promise<unknown> {
     return this.http.post(`${this.endpoint}/`, {
       data: JSON.stringify(title),
       mode: 'cors',
@@ -15,7 +28,7 @@ export class ChatApi extends BaseApi {
     });
   }
 
-  addUser(chatData: any) {
+  addUser(chatData: { chatId: number; users: number[] }): Promise<unknown> {
     return this.http.put(`${this.endpoint}/users`, {
       data: JSON.stringify(chatData),
       mode: 'cors',
@@ -23,7 +36,7 @@ export class ChatApi extends BaseApi {
     });
   }
 
-  deleteUser(chatData: any): Promise<unknown> {
+  deleteUser(chatData: { users: []; chatId: number }): Promise<unknown> {
     return this.http.delete(`${this.endpoint}/users`, {
       data: JSON.stringify(chatData),
       mode: 'cors',
@@ -31,7 +44,7 @@ export class ChatApi extends BaseApi {
     });
   }
 
-  read() {
+  read(): Promise<ChatInfo[] | unknown> {
     return this.http.get(`${this.endpoint}/`);
   }
 
@@ -43,7 +56,7 @@ export class ChatApi extends BaseApi {
     return this.http.get(`${this.endpoint}/${id}/users`);
   }
 
-  delete(chat: { chatId: string }) {
+  delete(chat: { chatId: number }) {
     return this.http.delete(`${this.endpoint}/`, {
       data: JSON.stringify(chat),
       mode: 'cors',

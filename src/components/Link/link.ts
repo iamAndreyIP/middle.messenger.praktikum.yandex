@@ -1,4 +1,5 @@
-import Block from "../../utils/block";
+import Block from '../../utils/block';
+import Icon from '../Icons/icons';
 
 const template = `
 <a href="{{linkHref}}" class="{{linkClass}}">{{linkText}}{{{linkIcon}}}</a>
@@ -8,7 +9,7 @@ type LinkType = {
   linkHref: string;
   linkText: string;
   linkClass: string;
-  linkIcon?: any;
+  linkIcon?: Icon;
   events?: { [key: string]: (e: Event) => void };
 };
 

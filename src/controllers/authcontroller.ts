@@ -54,19 +54,16 @@ export class AuthController {
   }
 
   async fetchUser() {
-    try {
-      const response: any = await this.api.read();
+    const response: any = await this.api.read();
 
-      if (!response.response.includes('reason')) {
-        const user = JSON.parse(response.response);
-
-        store.set('currentUser', user);
-      } else {
-        router.go('/');
-      }
-    } catch (error) {
-      console.error(error.message);
+    if (response.response.includes('reason')) {
+      console.log(response.response);
+      throw new Error('some err');
     }
+
+    const user = JSON.parse(response.response);
+
+    store.set('currentUser', user);
   }
 
   async logout() {
@@ -78,6 +75,8 @@ export class AuthController {
       MessageController.allClose();
 
       store.clearStore();
+
+      console.log(store.getState());
 
       router.go('/');
     } catch (error) {

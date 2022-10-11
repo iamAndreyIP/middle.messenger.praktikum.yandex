@@ -4,6 +4,7 @@ import Input from '../Input/input';
 import Icon from '../Icons/icons';
 import MessageController from '../../controllers/messageController';
 import store from '../../utils/store';
+import Modal from '../Modal/modal';
 
 const template = `
 <div class="picked-chat__actions">
@@ -19,8 +20,15 @@ const template = `
 </div>
 `;
 
+type PickedChatActionsType = {
+  clipModal?: Modal;
+  inputMessage: Input;
+  blueArrowIcon: Icon;
+  clipIcon: Icon;
+};
+
 export default class PickedChatActions extends Block {
-  constructor(props: {} | undefined) {
+  constructor(props: PickedChatActionsType | {}) {
     super(props);
   }
 

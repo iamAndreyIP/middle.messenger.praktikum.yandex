@@ -1,17 +1,23 @@
 import Block from '../../utils/block';
 import { connect } from '../../utils/store';
+import Link from '../../components/Link/link';
 
 const template = `
 <div class="profile__avatar">
-    <img class="profile__avatar-img" src="https://ya-praktikum.tech/api/v2/resources{{avatar}}" alt="" width="130px" height="130px"/>
+    <img class="profile__avatar-img" src="https://ya-praktikum.tech/api/v2/resources{{avatar}}" alt="avatar" width="130px" height="130px"/>
     <div class="overlayAvatar">
       {{{avatarLink}}}
     </div>
 </div>
 `;
 
+type AvatarType = {
+  avatarLink: Link;
+  avatar?: string;
+};
+
 export class AvatarBase extends Block {
-  constructor(props: {} | undefined) {
+  constructor(props: AvatarType) {
     super({ ...props });
   }
 
