@@ -18,3 +18,10 @@
     text-align: center;
   }
 }
+
+.nochat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 2;
+}

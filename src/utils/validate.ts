@@ -1,11 +1,11 @@
 enum ValidatorType {
-  Email = "email",
-  Name = "first_name",
-  Second = "second_name",
-  Login = "login",
-  Password = "password",
-  Password2 = "password2",
-  Phone = "phone",
+  Email = 'email',
+  Name = 'first_name',
+  Second = 'second_name',
+  Login = 'login',
+  Password = 'password',
+  Password2 = 'password2',
+  Phone = 'phone',
 }
 
 class Validator {
@@ -16,20 +16,20 @@ class Validator {
         value
       );
 
-    return [result, "Некорректный адрес почты"];
+    return [result, 'Некорректный адрес почты'];
   }
 
   name(value: string): [boolean, string] {
     return [
       /[A-ZА-Я][a-zа-я\-]*/.test(value),
-      "Первая буква большая допустимы символы латиницы и кириллицы, а также дефис",
+      'Первая буква большая допустимы символы латиницы и кириллицы, а также дефис',
     ];
   }
 
   login(value: string): [boolean, string] {
     return [
       /(?!^\d+$)[A-Za-z0-9_\-]{3,20}/.test(value),
-      "Логин должен состояить из латинских букв и цифр, также допустимы символы _ и -",
+      'Логин должен состояить из латинских букв и цифр, также допустимы символы _ и -',
     ];
   }
 
@@ -41,15 +41,15 @@ class Validator {
     this.pass1 = isValid ? value : null;
     return [
       isValid,
-      "Пароль должен содержать одну заглавную букву и одну цифру длинна от 8 до 40 символов",
+      'Пароль должен содержать одну заглавную букву и одну цифру длинна от 8 до 40 символов',
     ];
   }
 
   phone(value: string): [boolean, string] {
-    return [/\+?[0-9]{10,15}/.test(value), "Некорректный номер телефона"];
+    return [/\+?[0-9]{10,15}/.test(value), 'Некорректный номер телефона'];
   }
   checkEqualPassword(value: string) {
-    return [this.pass1 === value, "Пароли не совпадают"];
+    return [this.pass1 === value, 'Пароли не совпадают'];
   }
   validate(name: string, value: string): (boolean | string)[] {
     switch (name) {
@@ -74,7 +74,7 @@ class Validator {
           return this.checkEqualPassword(value);
         }
       default:
-        return [!!value.length, "Значение не должно быть пустым"];
+        return [!!value.length, 'Значение не должно быть пустым'];
     }
   }
 }

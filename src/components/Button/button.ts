@@ -1,19 +1,20 @@
-import Block from "../../utils/block";
+import Block from '../../utils/block';
 
 const template = `
-<button class="{{buttonClass}}">
+<button class="{{buttonClass}}" title="{{title}}">
     {{buttonText}}
 </button>
 `;
 
-type buttonType = {
+export type ButtonType = {
   buttonClass: string;
   buttonText: string;
   events?: { [key: string]: (e: Event) => void };
+  title?: string;
 };
 
 export default class Button extends Block {
-  constructor(props: buttonType) {
+  constructor(props: ButtonType) {
     super(props);
   }
 
