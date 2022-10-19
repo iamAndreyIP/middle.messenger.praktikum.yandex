@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "Node"
+  },
+  "ts-node": {
+    "files": true,
+    "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "lib": ["ESNext", "DOM"]
+    }
+  },
+  "include": ["src/**/*"],
+  "files": ["index.ts"]
+}

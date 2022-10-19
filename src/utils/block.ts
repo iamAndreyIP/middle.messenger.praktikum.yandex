@@ -14,7 +14,7 @@ class Block {
 
   private _element: HTMLElement | null = null;
   private _meta: { props: any };
-  public _id = null;
+  public _id: string | null = null;
 
   protected props: any;
   protected children: Record<string, Block>;
@@ -116,7 +116,7 @@ class Block {
     Object.assign(this.props, nextProps);
   };
 
-  setChildren = (child) => {
+  setChildren = (child: typeof Block) => {
     if (!child) {
       return;
     }

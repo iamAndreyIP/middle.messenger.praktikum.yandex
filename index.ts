@@ -7,6 +7,8 @@ import ProfilePage from './src/pages/profilePage/profilePage';
 import Router from './src/utils/Router';
 import AuthController from './src/controllers/authcontroller';
 
+import './main.scss';
+
 export const router = new Router();
 
 document.addEventListener('DOMContentLoaded', async () => {
