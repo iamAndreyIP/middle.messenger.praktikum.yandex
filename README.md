@@ -2,17 +2,19 @@
 
 ---
 
-### Sprint_3
+### Sprint_4
 
 Можно посмотреть по этой ссылке:
 
-https://nimble-bavarois-12035b.netlify.app/
+https://chat-app-praktik.herokuapp.com/
 
 ---
 
-#### Заметка:
+#### Заметки:
 
-Тесты необязательны,
+В режиме инкогнито в некоторых браузерах блочаться сторонние куки
+поэтому в этом режиме может не работать логин и регистрация
+
 stylelint необязателен
 
 ## Ссылка на макет:
@@ -53,29 +55,35 @@ https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1
 
 # Моковые данные
 
-### Уже зарегестрированные пользователи (можно потестить)
+### Уже зарегестрированные пользователи (можно потестить, база переодически чиститься!данные могут быть устаревшими)
 
 № 1:
 
-- id:97772
-- login: "mr.guest11"
-- first_name: "Guest11"
-- second_name: "Eleventh"
-- password: "helloguest11Times"
-- email: "email.for.guest11@my.exp"
-- phone: "+7098765432111"
+- id:22370
+- login: "mr.guest3"
+- first_name: "Guest3"
+- second_name: "Third"
+- password: "helloguest3Times"
+- email: "email.for.guest3@my.exp"
+- phone: "709876543210"
 
 № 2:
 
-- id:97812
-- login: "mr.guest8"
-- first_name: "Guest8"
-- second_name: "Eighth"
-- password: "helloguest8Times"
-- email: "email.for.guest8@my.exp"
-- phone: "+7098765432108"
+- id:22371
+- login: "mr.guest4"
+- first_name: "Guest4"
+- second_name: "Fourth"
+- password: "helloguest4Times"
+- email: "email.for.guest4@my.exp"
+- phone: "8098765432103"
 
 ## Комманды:
+
+### Tests
+
+Запускает тесты (Mocha, Chai)
+
+`npm run test`
 
 ### Build (express)
 
@@ -83,14 +91,14 @@ https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1
 
 `npm run start`
 
-### Dev (parcel)
+### Dev (webpack)
 
-Собирает проэкт в dev mode и запускает локально localhost на порту 1234 (используется parcel) в watch режиме:
+Собирает проэкт в dev mode и запускает локально localhost на порту 1234 (используется webpack) в watch режиме:
 
-`npm run dev`
+`npm run serve`
 
-### Build (parcel)
+### Build (webpack)
 
-Собирает проэкт в product mode (используется parcel):
+Собирает проэкт в product mode (используется webpack):
 
 `npm run build`
